@@ -1,0 +1,84 @@
+1.
+creat new acc OR to log in to your account
+-need to come on site http://www.ebates.com/
+-click "Sign In"
+-enter correct email in field for entering the email - zaci@divismail.ru
+-enter correct pass in field for entering the pass - Qweasdzxc123
+-press the button - "Sign In"
+-sign out
+
+
+2.
+error handling - email
+-need to come on site http://www.ebates.com/
+-click "Sign In"
+-enter no correct email in field for entering the email
+-press the button - "Sign In"
+-catch error message - examples below 
+
+examples below:
+-			-> "Please fill out this field."
+-q			-> "Your Email Address does not appear to be formatted correctly. Please re-enter it before continuing."
+-qwe			-> "Your Email Address does not appear to be formatted correctly. Please re-enter it before continuing."
+-qwe@q			-> "Your Email Address does not appear to be formatted correctly. Please re-enter it before continuing."
+-qwe@qw			-> "Your Email Address does not appear to be formatted correctly. Please re-enter it before continuing."
+-qwe@qwe		-> "Your Email Address does not appear to be formatted correctly. Please re-enter it before continuing."
+-qwe@qwe.q		-> "Your Email Address does not appear to be formatted correctly. Please re-enter it before continuing."
+
+
+3.
+error handling - pass
+-need to come on site http://www.ebates.com/
+-click "Sign In"
+-enter correct email in field for entering the email - zaci@divismail.ru, but no correct pass in field for entering the pass
+-press the button - "Sign In"
+-catch error message - examples below
+
+examples below for correct email - zaci@divismail.ru:
+-			-> "You forgot to enter your Password. Please enter it before continuing."
+-q			-> "Your Password must contain between 6 and 12 characters. Please re-enter it before continuing."
+-qw			-> "Your Password must contain between 6 and 12 characters. Please re-enter it before continuing."
+-qwe			-> "Your Password must contain between 6 and 12 characters. Please re-enter it before continuing."
+-qwer			-> "Your Password must contain between 6 and 12 characters. Please re-enter it before continuing."
+-qwert			-> "Your Password must contain between 6 and 12 characters. Please re-enter it before continuing."
+-qwertyuiopasdf		-> "Oops. The email address and/or password you entered is incorrect. Remember, passwords are case-sensitive. Please try again."
+
+
+4.
+error handling - reusing a email - zaci@divismail.ru
+-need to come on site http://www.ebates.com/
+-click "Sign In"
+-enter correct email in field for entering the email - zaci@divismail.ru
+-enter no correct pass in field for entering the pass - xamples below
+-press the button - "Sign In"
+-catch error message - examples below
+
+xamples below:
+-Qweasdzxc		-> "Oops. The email address and/or password you entered is incorrect. Remember, passwords are case-sensitive. Please try again."
+
+
+5.
+recovery of pass for correct email - zaci@divismail.ru and check new pass
+-need to come on site http://www.ebates.com/ and 
+-click "Sign In"
+-click "Forgot Password?"
+-to verify the change window
+-in new window enter correct email in field for entering the email - zaci@divismail.ru
+-press the button - "Resset password"
+-go to email and verify a new email
+-follow the link in email
+-to enter a new password in the first field
+-to enter a new password in the second field
+-press the button - "Update"
+-sign out
+-need to come on site http://www.ebates.com/
+-click "Sign In"
+-enter correct email in field for entering the email - zaci@divismail.ru
+-enter correct NEW pass in field for entering the pass - Zxcasdqwe123
+-press the button - "Sign In"
+-sign out
+
+
+6.
+also to can check the elements visibility, location, size
+

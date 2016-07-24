@@ -1,0 +1,150 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>core</groupId>
+	<artifactId>Maven_TestNG_DataProvider</artifactId>
+	<!-- <version>${build.version}</version> -->
+	<version>1.1</version>
+	<packaging>jar</packaging>
+
+	<name>Maven_TestNG_DataProvider</name>
+	<url>http://maven.apache.org</url>
+
+
+	<!-- ############################### properties ############################################### -->
+	<properties>
+		<version>1.1</version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<java.version>1.7</java.version>
+	</properties>
+	<!-- ############################### properties ############################################### -->
+
+
+	<!-- ############################### dependencies - START ############################################### -->
+	<dependencies>
+
+		<dependency>
+			<groupId>org.testng</groupId>
+			<artifactId>testng</artifactId>
+			<version>6.9.10</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-java</artifactId>
+			<version>2.53.1</version>
+		</dependency>
+
+	</dependencies>
+	<!-- ############################### dependencies - END ############################################### -->
+
+
+	<!-- ############################### build - START ############################################### -->
+	<build>
+
+		<plugins> <!-- plugins - START -->
+
+			<!-- #### FAT JAR #### -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<version>2.6</version>
+				<configuration>
+					<archive>
+						<manifest>
+							<!-- -Dclass=core.HtmlUnit -->
+							<!-- <mainClass>${class}</mainClass> -->
+							<mainClass>core.HtmlUnit</mainClass>
+						</manifest>
+					</archive>
+					<descriptorRefs>
+						<descriptorRef>jar-with-dependencies</descriptorRef>
+					</descriptorRefs>
+				</configuration>
+				<executions>
+					<execution>
+						<id>assemble-all</id>
+						<phase>package</phase>
+						<goals>
+							<goal>single</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<!-- #### FAT JAR #### -->
+
+		</plugins> <!-- plugins - END -->
+
+	</build>
+	<!-- ############################### build - END ############################################### -->
+
+
+	<!-- ############################### reporting - START ############################################### -->
+	<reporting>
+
+		<plugins> <!-- plugins - START -->
+
+			<!-- #### report #### -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-report-plugin</artifactId>
+				<version>2.19.1</version>
+			</plugin>
+			<!-- #### report #### -->
+
+		</plugins> <!-- plugins - START -->
+
+	</reporting>
+	<!-- ############################### reporting - START ############################################### -->
+
+
+	<!-- ############################### profiles - START ############################################### -->
+	<profiles>
+
+		<profile>
+			<id>test1</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-surefire-plugin</artifactId>
+						<version>2.19</version>
+						<configuration>
+							<suiteXmlFiles>
+								<!-- -Dtestngfile=src/test/resources/testngxml/testng_No01_AnnotationsTest.xml -->
+								<!-- <suiteXmlFile>${testngfile}</suiteXmlFile> -->
+								<!-- -Dtestngfile=testng_No01_AnnotationsTest.xml -->
+								<!-- <suiteXmlFile>src/test/resources/testngxml/${testngfile}</suiteXmlFile> -->
+								<!-- <suiteXmlFile>${testngfile}</suiteXmlFile> -->
+								<suiteXmlFile>testng_AppTest</suiteXmlFile>
+							</suiteXmlFiles>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+
+		<profile> <!-- run - mvn clean test -Ptest2 -->
+			<id>test2</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-surefire-plugin</artifactId>
+						<version>2.19</version>
+						<configuration>
+							<suiteXmlFiles>
+								<suiteXmlFile>!testngxml!/${testngfile}</suiteXmlFile>
+							</suiteXmlFiles>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+
+	</profiles>
+	<!-- ############################### profiles - START ############################################### -->
+
+
+</project>
